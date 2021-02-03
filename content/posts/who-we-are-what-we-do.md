@@ -18,7 +18,3 @@ The Goat is a group of people who `love to code` - *the one thing that matters.*
 
 That's all we do, and at last but not least:
 We are **"The greatest of all time"**.
-
-```
-test
-```
