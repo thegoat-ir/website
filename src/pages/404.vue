@@ -1,11 +1,28 @@
 <template>
-  <Layout :showFooter="false">
-    <div class="post max-w-4xl mx-auto text-center">
-      <h1>404: page not found</h1>
-      <p>This is not the web page you are looking for.</p>
+  <Layout :showLogo="false" :showFooter="false">
+    <div id="not-found">
+      <p>404: not found</p>
+      <a href="https://thegoat.ir">The Goat</a>
     </div>
   </Layout>
 </template>
+<style lang="scss">
+#not-found {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+}
+#not-found a{
+  display: block;
+  margin-top: -40px;
+  font-size: .4em;
+}
+</style>
+
 <script>
 export default {
   metaInfo: {
