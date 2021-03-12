@@ -15,11 +15,6 @@
   transform: translate(-50%, -50%);
   font-size: 2em;
 }
-#not-found a{
-  display: block;
-  margin-top: -40px;
-  font-size: .4em;
-}
 </style>
 
 <script>
