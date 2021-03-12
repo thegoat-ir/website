@@ -22,7 +22,7 @@
 <script>
 export default {
   metaInfo: {
-    title: "Not found - The Goat",
+    title: "Not found",
   },
 };
 </script>
