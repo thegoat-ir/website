@@ -7,6 +7,8 @@
 </template>
 <style lang="scss">
 #not-found {
+  width: 85%;
+  text-align: center;
   margin: 0;
   position: absolute;
   top: 50%;
