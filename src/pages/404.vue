@@ -1,22 +1,11 @@
 <template>
   <Layout :showFooter="false">
-    <div id="not-found">
-      <p>404: not found</p>
+    <div class="post max-w-4xl mx-auto text-center">
+      <h1>404: page not found</h1>
+      <p>This is not the web page you are looking for.</p>
     </div>
   </Layout>
 </template>
-<style lang="scss">
-#not-found {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 2em;
-}
-</style>
-
 <script>
 export default {
   metaInfo: {
