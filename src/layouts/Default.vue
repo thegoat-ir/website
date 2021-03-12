@@ -15,7 +15,7 @@
       <slot/>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" v-if="showFooter">
       <span class="footer__copyright">© {{ new Date().getFullYear() }} The Goat. </span>
     </footer>
 
@@ -28,7 +28,8 @@ import ToggleTheme from '~/components/ToggleTheme.vue'
 
 export default {
   props: {
-    showLogo: { default: true }
+    showLogo: { default: true },
+    showFooter: { default: true }
   },
   components: {
     Logo,
