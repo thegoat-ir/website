@@ -11,6 +11,16 @@
         :post="edge.node"
       />
     </div>
+    <div class="repositories">
+      <Repository
+        v-for="repository in repositories"
+        :key="repository.id"
+        :url="repository.html_url"
+        :title="repository.full_name"
+        :description="repository.description"
+        :starCount="repository.stargazers_count"
+      />
+    </div>
   </Layout>
 </template>
 
@@ -40,14 +50,37 @@ query {
 <script>
 import Author from "~/components/Author.vue";
 import PostCard from "~/components/PostCard.vue";
-
+import Repository from "~/components/Repository.vue";
+import axios from "axios";
 export default {
   components: {
     Author,
     PostCard,
+    Repository,
+  },
+  data() {
+    return {
+      repositories: null,
+    };
+  },
+  created() {
+    axios
+      .get(
+        "https://api.github.com/orgs/thegoat-ir/repos?type=public&sort=updated&per_page=10&page=1"
+      )
+      .then((response) => (this.repositories = response.data));
   },
   metaInfo: {
     title: "The greatest of all time",
   },
 };
 </script>
+<style lang="scss" scoped>
+.repositories {
+  width: 90%;
+  margin: 20px auto;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 20px 10px;
+}
+</style>
