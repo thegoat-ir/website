@@ -13,7 +13,7 @@
     </div>
     <div class="repositories">
       <div v-if="errored"></div>
-      <div v-if="loading">
+      <div v-else-if="loading">
         <div class="repository">
           <content-placeholders :rounded="true">
             <h4><content-placeholders-heading /></h4>
