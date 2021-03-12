@@ -2,7 +2,6 @@
   <Layout :showLogo="false" :showFooter="false">
     <div id="not-found">
       <p>404: not found</p>
-      <a href="https://thegoat.ir">The Goat</a>
     </div>
   </Layout>
 </template>
