@@ -9,3 +9,8 @@ export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);
 }
+
+import Vue from "vue";
+import VueContentPlaceholders from "vue-content-placeholders";
+
+Vue.use(VueContentPlaceholders);
