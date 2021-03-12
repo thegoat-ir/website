@@ -16,7 +16,7 @@
 
     <footer class="footer" v-if="showFooter">
       <span class="footer__copyright"
-        >© {{ new Date().getFullYear() }} The Goat.
+        >© {{ new Date().getFullYear() }} The Goat - by <a href="https://mahdyar.me" alt="mahdyar" target="_blank">Mahdyar</a>
       </span>
     </footer>
   </div>
