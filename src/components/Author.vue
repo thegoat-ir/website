@@ -36,7 +36,7 @@
 
     <p class="author__links">
       <a href="//github.com/thegoat-ir" target="_blank">GitHub</a>
-      <a href="//t.me/thegoat_ir" target="_blank">Telegram</a>
+      <a href="//twitter.com/thegoat_ir" target="_blank">Twitter</a>
     </p>
   </div>
 </template>
