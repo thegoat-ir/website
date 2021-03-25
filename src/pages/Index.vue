@@ -136,4 +136,16 @@ export default {
   white-space: nowrap;
   padding: 20px 10px;
 }
+.repositories::-webkit-scrollbar {
+  height: .4em;
+}
+
+.repositories::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 16px;
+  border: 4px solid var(--scrollbar-color);
+}
+.repositories::-webkit-scrollbar-button {
+    display:none;
+}
 </style>

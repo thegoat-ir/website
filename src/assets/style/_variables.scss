@@ -17,6 +17,9 @@ body {
   --header-height: 80px;
   --radius: 5px;
 }
+.repositories{
+  --scrollbar-color: #7a7b7c;
+}
 
 // Make  things smaller for mobile
 @media screen and (max-width: 650px) {
@@ -37,4 +40,7 @@ body[data-theme="dark"] {
   --border-color: #222831;
   --body-color: #dddddd;
   --title-color: #eeeeee;
+}
+.repositories[data-theme="dark"]{
+  --scrollbar-color: #8f9397;
 }
