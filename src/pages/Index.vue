@@ -58,11 +58,11 @@
       <div v-else>
         <Repository
           v-for="repository in repositories"
-          :key="repository.id"
-          :url="repository.html_url"
-          :title="repository.full_name"
+          :key="repository.key"
+          :url="repository.url"
+          :title="repository.title"
           :description="repository.description"
-          :starCount="repository.stargazers_count"
+          :starCount="repository.starCount"
         />
       </div>
     </div>
@@ -98,6 +98,8 @@ import PostCard from "~/components/PostCard.vue";
 import Star from "~/components/Star.vue";
 import Repository from "~/components/Repository.vue";
 import axios from "axios";
+import { setupCache } from "axios-cache-adapter";
+
 export default {
   components: {
     Author,
@@ -110,13 +112,21 @@ export default {
       repositories: null,
       loading: true,
       errored: false,
+      apiToken: process.env.GRIDSOME_API_TOKEN,
     };
   },
   created() {
-    axios
-      .get(
-        "https://api.github.com/orgs/thegoat-ir/repos?type=public&sort=updated&per_page=10&page=1"
-      )
+    const cache = setupCache({
+      maxAge: 15 * 60 * 1000,
+    });
+    const api = axios.create({
+      adapter: cache.adapter,
+    });
+
+    api({
+      url: `https://api.thegoat.ir/beard/githubRepositories?token=${this.apiToken}`,
+      method: "get",
+    })
       .then((response) => (this.repositories = response.data))
       .catch((error) => {
         this.errored = true;
@@ -137,7 +147,7 @@ export default {
   padding: 20px 10px;
 }
 .repositories::-webkit-scrollbar {
-  height: .4em;
+  height: 0.4em;
 }
 
 .repositories::-webkit-scrollbar-thumb {
@@ -146,6 +156,6 @@ export default {
   border: 4px solid var(--scrollbar-color);
 }
 .repositories::-webkit-scrollbar-button {
-    display:none;
+  display: none;
 }
 </style>
